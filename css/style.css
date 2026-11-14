@@ -10,6 +10,7 @@ body {
   background-repeat: no-repeat;
   background-position: top -20px right -50px;
   background-size: 350px;
+ 
 }
 
 h2 {
@@ -24,6 +25,7 @@ p {
     font-weight: 500;
     color:  rgb(143, 148, 167);
     line-height: 1.5;
+    padding-right: 0.75rem;
 }
 
 
@@ -114,7 +116,7 @@ nav img {
 
 /* propiedades de seccion features */
 .features {
-  padding: 4rem 0.5rem;
+  padding: 3rem 0rem 0rem 1rem;
 }
 
 .features-intro {
@@ -135,8 +137,8 @@ nav img {
   align-items: center;
   background-color: rgb(255, 239, 234);
   margin-bottom: 1rem;
-  width: 110%;
   border-radius: 50px 0px 0px 50px;
+  width: 100%;
 }
 
 .badge {
@@ -158,6 +160,7 @@ nav img {
 
 .testimonials {
   padding: 1rem 0.5rem;
+  text-align: center;
 }
 
 .testimonials-card {
@@ -181,4 +184,133 @@ nav img {
   width: 75px;
   height: 75px;
   border-radius: 50%;
+}
+
+/* Puntitos, "dots" */
+.testimonials-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: -2rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgb(242, 95, 58);
+  border-radius: 50%;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.activo {
+  background-color: rgb(242, 95, 58); 
+}
+
+.btn-started {
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem; 
+    color: white;
+    background-color: rgb(242, 95, 58); 
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    box-shadow:2px 4px 6px rgb(242, 95, 58);
+    margin-top: 1rem;
+}
+
+.btn-testimonials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+
+/* seccion cta */
+.cta {
+  display: flex;
+  flex-direction: column;
+  padding: 8rem 1rem;
+  margin-top: 2rem;
+  text-align: center;
+  background-color: rgb(242, 95, 58);
+  gap: 1rem;
+  background-image: url('../img/bg-simplify-section-mobile.svg');
+  background-repeat: no-repeat;
+  background-position: left 0px bottom 20px;
+  background-size: 110px;
+}
+
+.cta h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.cta .btn-started {
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem; 
+    color:rgb(242, 95, 58);
+    background-color: white; 
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+
+  }
+
+
+
+  /* propiedades del Footer */
+.web-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: rgb(35, 44, 81);
+}
+  /* form */
+.footer-form {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem;
+}
+
+#email-input {
+  border-radius: 50px;
+  padding: 0.75rem 1rem;
+  border: solid 1px rgb(209, 209, 209);
+  background-color: white;
+}
+
+#email-input::placeholder {
+  color: rgb(218, 218, 218);
+  font-size: 0.9rem;
+}
+
+.footer-form button {
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: rgb(242, 95, 58);
+  color: white;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  width: 100px;
 }

@@ -164,14 +164,16 @@ nav img {
 }
 
 .testimonials-card {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
   border-radius: 10px;
   margin-bottom: 2rem;
   align-items: center;
   text-align: center;
   gap: 2rem;
+  flex: 0 0 100%;
+  scroll-snap-align: center;
 }
 
 .testimonials-card h3 {
@@ -184,6 +186,18 @@ nav img {
   width: 75px;
   height: 75px;
   border-radius: 50%;
+}
+
+.testimonials-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.testimonials-container::-webkit-scrollbar {
+  display: none;
 }
 
 /* Puntitos, "dots" */
@@ -357,7 +371,6 @@ nav img {
 .footer-social a {
   color: white;
   font-size: 1.5rem;
-
 }
 
 
@@ -366,7 +379,247 @@ nav img {
   height: auto;
   max-width: 400px;
   margin-bottom: 6rem;
+}
+
+/* MOBILE STYLES */
+
+.nav-links {
+  display: none;
+}
+.nav-bar .nav-btn { 
+  display: none;
+}
+
+
+
+/* +++++++++++++   MEDIA QUERY DESKTOP ++++++++++++*/
+@media (min-width: 1440px) {
+
+/* nav */
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 8rem;
+    max-width: 1440px;
+    margin: 0 auto;
+  }  
+
+  .hamb {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: rgb(35, 44, 81);
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .nav-bar .nav-btn {
+    display: inline-block;
+    margin-top: 0;
+  }
   
-  
+  body {
+    background-image: none;
+  }
+
+
+
+/* seccion hero */
+  .hero {
+    flex-direction: row-REVERSE;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 8rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+
+ .hero-content {
+    text-align: left;
+    align-items: flex-start;
+    max-width: 440px;
+  }
+  .hero-image {
+    max-width: 50%;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+  .hero-image img {
+    width: 100%;
+    height: auto;
+  }
+
+
+/* seccion features */
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    padding: 6rem 8rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    align-items: flex-start;
+    gap:5rem;
+  }
+
+  .features-intro {
+    text-align: left;
+    max-width: 380px; 
+    margin-top: 0;
+  }
+
+
+  .features-intro h2 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .features-list {
+    max-width: 540px;
+  }
+
+  .feature-item {
+    margin-bottom: 2rem;
+  }
+
+  .feature-header {
+    background-color: transparent;
+  }
+
+  .features p {
+    line-height: 1.5rem;
+    padding-left: 4.5rem;
+  }
+
+/* seccion testimonials */
+.testimonials-container {
+  display:flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.testimonials-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.testimonials-card p {
+  max-width: 400px;
+}
+
+.testimonials-dots {
+  display: none;
+}
+
+
+/* seccion cta */
+
+.cta {  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-ITEMS: center;
+  background-image: NONE;
 
 }
+
+
+/* seccion footer */
+.web-footer {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.5fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "logo   nav form"
+      "social nav copyright";
+    gap: 2.5rem 4rem;
+    align-items: center;
+    padding: 4rem 8rem;
+    width: 100%;
+  }
+
+  .footer-logo {
+    grid-area: logo;
+    display: contents;
+  }
+
+  .web-footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.5fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "logo   nav form"
+      "social nav copy";
+    padding: 4rem 8rem;
+    align-items: start;
+    row-gap: 3rem;
+  }
+
+  .footer-logo {
+    display: contents;
+  }
+
+  .logo-invert {
+    grid-area: logo;
+    width: 10rem;
+    margin: 0;
+  }
+
+  .footer-logo p {
+    grid-area: copy;
+    justify-self: end;
+    align-self: end;
+    padding-right: 0;
+    font-size: 0.85rem;
+  }
+
+  /* Redes Sociales */
+  .footer-social {
+    grid-area: social;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 0;
+    align-self: end;
+  }
+
+  /* Nav */
+  .footer-nav {
+    grid-area: nav;
+    max-width: 100%;
+    justify-content: space-around;
+    margin-bottom: 0;
+  }
+
+  /* form */
+  .footer-form {
+    grid-area: form;
+    margin: 0;
+    justify-self: end;
+  }
+
+
+
+
+}
+
+
